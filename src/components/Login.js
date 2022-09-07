@@ -47,8 +47,8 @@ const Login = () => {
   return (
     <>
       <Header_nav />
-      <form onSubmit={onSubmitHandler}>
-        <StLoginContainer>
+      <Wrap>
+        <form onSubmit={onSubmitHandler}>
           <StLoginBox>
             <StLoginHeader>
               <h1> 로그인 </h1>
@@ -77,46 +77,40 @@ const Login = () => {
               <StLoginBtn>로그인</StLoginBtn>
             </div>
           </StLoginBox>
-        </StLoginContainer>
-      </form>
+        </form>
+      </Wrap>
     </>
   );
 };
 
 export default Login;
 
-//styled components
-
-const StLoginContainer = styled.div`
-  width: 400px;
-  height: 600px;
-  margin: 0 auto;
-`;
-const StLoginBox = styled.div`
-  background-color: white;
-  width: 100%;
-  height: 400px;
+const Wrap = styled.div`
   display: flex;
-  align-items: center;
-  text-align: center;
   flex-direction: column;
-  border: 1px solid #4b89dc;
-  color: #4b89dc;
-  border-radius: 10px;
-  line-height: 40px;
+  padding: 0px;
+  background: linear-gradient(to bottom, rgb(255, 217, 0), rgb(255, 255, 255));
+`;
+
+const StLoginBox = styled.div`
+  text-align: center;
+  margin: auto;
+  font-family: "양진체";
+  padding: 50px;
+  width: 400px;
+  border: 3px solid #000;
+  margin-top: 40px;
+  margin: 40px auto;
+  border-radius: 22px;
+  box-shadow: 0px 10px 0px 0px;
+  background: #ffffff;
 `;
 
 const StLoginHeader = styled.div`
-  background-color: #4b89dc;
-  width: 100%;
-  height: 100px;
-  color: white;
+  font-size: 20px;
   text-align: center;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  h1 {
-    line-height: 50px;
-  }
+  padding: 10px 20px 10px 20px;
+  background: #ffe000;
 `;
 
 const StLoginInputBox = styled.div`
@@ -129,25 +123,20 @@ const StLoginInput = styled.input`
   margin: 20px;
   width: 180px;
   background: white;
-  border: 1px solid #4b89dc;
+  border: 3px solid #ffe000;
   border-radius: 3px;
 `;
 
 const StLoginBtn = styled.button`
-  background-color: white;
-  border: 1px solid #4b89dc;
-  width: 100px;
-  height: 38px;
-  display: inline-block;
-  margin: 40px 30px;
-  border-radius: 4px;
-  color: #4b89dc;
-  font-weight: bold;
+  font-family: "IM_Hyemin-Regular";
+  display: block;
+  width: 100%;
+  padding: 16px 10px;
+  margin-top: 70px;
+  background: #ffe000;
+  border: none;
+  font-size: 18px;
   cursor: pointer;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  &:hover {
-    background-color: #4b89dc;
-    color: white;
-  }
+  border-radius: 2px;
+  font-family: "양진체";
 `;

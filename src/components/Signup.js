@@ -110,101 +110,122 @@ const Signup = () => {
   return (
     <>
       <Header_nav />
-      <ContainerWrap>
-        <StForm>
-          <InputWrap>
-            <StLabel>아이디</StLabel>
-            <StInputId
-              placeholder="아이디를 입력하세요."
-              onChange={onChangeNickname}
-              type="text"
-              name="nickname"
-              id="nickname"
-              value={input.nickname}
-            />
-            <StButton content={"check"} onClick={onIdCheckHandler}>
-              중복확인
-            </StButton>
-          </InputWrap>
-          <StSmallLabel>
-            * 아이디는 영어와 숫자로 4자이상 10자 이하로 입력해주세요. *
-          </StSmallLabel>
+      <Wrap>
+        <ContainerWrap>
+          <StForm>
+            <InputWrap>
+              <StLabel>아이디</StLabel>
+              <StInputId
+                placeholder="아이디를 입력하세요."
+                onChange={onChangeNickname}
+                type="text"
+                name="nickname"
+                id="nickname"
+                value={input.nickname}
+              />
+              <StButton content={"check"} onClick={onIdCheckHandler}>
+                중복확인
+              </StButton>
+            </InputWrap>
+            <StSmallLabel>
+              * 아이디는 영어와 숫자로 4자이상 10자 이하로 입력해주세요. *
+            </StSmallLabel>
 
-          <InputWrap>
-            <StLabel>비밀번호</StLabel>
-            <StInput
-              placeholder="password를 입력하세요."
-              onChange={onChangePassword}
-              type="password"
-              name="password"
-              id="password"
-              value={input.password}
-            />
-          </InputWrap>
-          <StSmallLabel style={{ marginLeft: "50px" }}>
-            * 비밀번호는 영어, 숫자 포함 8자이상 20자이하로 입력해주세요 *
-          </StSmallLabel>
-          <InputWrap>
-            <StLabel>비밀번호 재확인</StLabel>
-            <StInput
-              placeholder="password를 한 번 더 입력해주세요."
-              onChange={onChangePasswordConfirm}
-              type="password"
-              name="passwordConfirm"
-              id="passWordConfirm"
-              value={input.passwordConfirm}
-            />
-            {passwordConfirmError && (
-              <div className="invalid-input">비밀번호가 일치하지 않습니다.</div>
-            )}
-          </InputWrap>
-          <JoinBtn
-            type="button"
-            onClick={() => {
-              addHandler();
-              console.log(input);
-            }}
-          >
-            회원가입
-          </JoinBtn>
-        </StForm>
-      </ContainerWrap>
+            <InputWrap>
+              <StLabel>비밀번호</StLabel>
+              <StInput
+                placeholder="비밀번호를 입력하세요."
+                onChange={onChangePassword}
+                type="password"
+                name="password"
+                id="password"
+                value={input.password}
+              />
+            </InputWrap>
+            <StSmallLabel style={{ marginLeft: "50px" }}>
+              * 비밀번호는 영어, 숫자 포함 8자이상 20자이하로 입력해주세요 *
+            </StSmallLabel>
+            <InputWrap>
+              <StLabel>비밀번호 재확인</StLabel>
+              <StInput
+                placeholder="비밀번호를 한 번 더 입력해주세요."
+                onChange={onChangePasswordConfirm}
+                type="password"
+                name="passwordConfirm"
+                id="passWordConfirm"
+                value={input.passwordConfirm}
+              />
+              {passwordConfirmError && (
+                <div className="invalid-input">
+                  비밀번호가 일치하지 않습니다.
+                </div>
+              )}
+            </InputWrap>
+            <JoinBtn
+              type="button"
+              onClick={() => {
+                addHandler();
+                console.log(input);
+              }}
+            >
+              회원가입
+            </JoinBtn>
+          </StForm>
+        </ContainerWrap>
+      </Wrap>
     </>
   );
 };
 
 export default Signup;
 
+const Wrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  background: linear-gradient(to bottom, rgb(255, 217, 0), rgb(255, 255, 255));
+`;
+
 const ContainerWrap = styled.div`
   text-align: center;
   margin: auto;
+  font-family: "양진체";
+  padding: 50px;
+  width: 400px;
+  border: 3px solid #000;
+  margin-top: 40px;
+  margin: 40px auto;
+  border-radius: 22px;
+  box-shadow: 0px 10px 0px 0px;
+  background: #ffffff;
 `;
 
 const InputWrap = styled.div`
+  outline: none;
   width: 100%;
+  background: #fff;
   border: none;
-  border-radius: 8px;
-  margin: 1.5% auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 16px 10px;
+  font-size: 16px;
+  margin-top: 10px;
+  border: 1px solid #eaeeef;
+  box-sizing: border-box;
+  border-radius: 2px;
 `;
 
 const StLabel = styled.label`
   width: 10vw;
-  min-width: 70px;
+  min-width: 120px;
   height: 30px;
-  margin-right: 1.5%;
   padding: 2%;
   display: flex;
   align-items: center;
-  justify-content: right;
   border-radius: 8px;
   font-weight: bolder;
 `;
 
 const StInputId = styled.input`
-  width: 32%;
+  width: 60%;
   padding: 12px;
   border: none;
   border-radius: 8px;
@@ -213,7 +234,7 @@ const StInputId = styled.input`
 `;
 
 const StInput = styled.input`
-  width: 40%;
+  width: 85%;
   padding: 12px;
   border: none;
   border-radius: 8px;
@@ -222,32 +243,35 @@ const StInput = styled.input`
 `;
 
 const StButton = styled.button`
-  background-color: #4b89dc;
+  background-color: #ffe000;
   border: none;
   border-radius: 5px;
-  padding: 5px;
-  margin: 0 0 0 38px;
+  padding: 18px 20px 18px 20px;
+  margin: 0 0 0 10px;
   cursor: pointer;
+  font-family: "양진체";
 `;
 
 const StSmallLabel = styled.label`
   width: 95%;
   font-size: 12px;
-  color: #285999;
+  color: #f1b800;
   font-weight: 600;
   height: 20vw;
 `;
 
 const JoinBtn = styled.button`
-  width: 150px;
-  height: 40px;
-  margin-left: 10px;
-  margin-top: 3%;
-  font-size: 15px;
-  background-color: #4b89dc;
-  color: black;
-  font-weight: 600;
-  border-radius: 10px;
+  font-family: "IM_Hyemin-Regular";
+  display: block;
+  width: 100%;
+  padding: 16px 10px;
+  margin-top: 30px;
+  background: #ffe000;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  font-family: "양진체";
 `;
 
 const StForm = styled.form``;
