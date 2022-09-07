@@ -1,0 +1,146 @@
+{
+  "posts": [
+    {
+      "id": 0,
+      "post_id": 0,
+      "created_at": "2022-06-10T10:54:11.076Z",
+      "title": "카드캡터 체리",
+      "thumbnail_url": "https://movie-phinf.pstatic.net/20160314_26/1457920153891qdBTB_JPEG/movie_image.jpg",
+      "onair_year": "2000",
+      "content": "재미있는 만화였어요!!!!!!",
+      "ost_url": "https://www.youtube.com/watch?v=e6zp5Qob9ko",
+      "user_id": "user123",
+      "likes": 12
+    },
+    {
+      "title": "짱구는 못말려",
+      "thumbnail_url": "https://movie-phinf.pstatic.net/20111223_270/13245912099492UR7d_JPEG/movie_image.jpg",
+      "onair_year": "2000",
+      "content": "재미있는 만화였어요! 천방지축 얼렁뚱땅! 빙글빙글!",
+      "ost_url": "https://www.youtube.com/watch?v=XHMdIA6bEOE",
+      "user_id": "user123",
+      "created_at": "2022-06-10T10:54:11.076Z",
+      "id": 1,
+      "post_id": 1,
+      "likes": 12
+    },
+    {
+      "title": "포켓몬스터",
+      "thumbnail_url": "https://mblogthumb-phinf.pstatic.net/20151210_192/whanfwn7_1449729673781P3BFn_PNG/pokemon_card___ash__misty__brock_y_pikachu_by_adfpf1-d6jexcj.png?type=w2",
+      "onair_year": "2000",
+      "content": "피카츄 귀여워!",
+      "ost_url": "https://www.youtube.com/watch?v=mPaNK28VSoI",
+      "id": 2,
+      "user_id": "user123",
+      "created_at": "2022-06-10T10:54:11.076Z",
+      "post_id": 2,
+      "likes": 12
+    },
+    {
+      "id": 3,
+      "post_id": 3,
+      "created_at": "2022-06-10T10:54:11.076Z",
+      "title": "카드캡터 체리",
+      "thumbnail_url": "https://newsimg.sedaily.com/2022/04/05/264KQDPTYX_1.jpg",
+      "onair_year": 1999,
+      "content": "재미있는 만화였어요!",
+      "ost_url": "https://www.youtube.com/watch?v=e6zp5Qob9ko",
+      "user_id": "user123",
+      "likes": 12
+    },
+    {
+      "title": "꼬마자동차 붕붕",
+      "thumbnail_url": "https://search.pstatic.net/common/?src=http%3A%2F%2Fcafefiles.naver.net%2FMjAxOTEyMjVfMTIz%2FMDAxNTc3MjYzOTE4NTc2.Sytc6XxNXoTK_zrH8AA7ttCitH7nNriGbZQkzZlyDmIg.ft3nou56siCsMQSAyAGtXO6NJ5yuf7ePQDLDKd-39pAg.PNG%2F2019-12-25_17%253B51%253B38_.png&type=sc960_832",
+      "onair_year": "1985",
+      "content": "붕붕붕~~ ",
+      "ost_url": "https://www.youtube.com/watch?v=1VDMpDz1HfY",
+      "user_id": "user123",
+      "id": 4,
+      "created_at": "2022-06-10T10:54:11.076Z",
+      "post_id": 4,
+      "likes": 12
+    },
+    {
+      "title": "꼬마마법사 레미",
+      "thumbnail_url": "https://firebasestorage.googleapis.com/v0/b/mymagazinepjt.appspot.com/o/animeImg%2F1655081336026?alt=media&token=995d8b33-60db-4c23-ae72-015190ed11d3",
+      "onair_year": "1999",
+      "content": "레미 레미 도레미~",
+      "ost_url": "https://www.youtube.com/watch?v=6ORiqV9SOyc",
+      "user_id": "user123",
+      "id": 5,
+      "created_at": "2022-06-10T10:54:11.076Z",
+      "post_id": 5,
+      "likes": 12
+    },
+    {
+      "title": "독수리 5형제",
+      "thumbnail_url": "https://firebasestorage.googleapis.com/v0/b/mymagazinepjt.appspot.com/o/animeImg%2F1655084209781?alt=media&token=1b61d032-a64e-4995-8ed6-d9c51bada88a",
+      "onair_year": "1972",
+      "content": "슈파~ 슈파슈파슈파~~",
+      "ost_url": "https://www.youtube.com/watch?v=_E_aD--3jRA",
+      "user_id": "user123",
+      "id": 6,
+      "created_at": "2022-06-10T10:54:11.076Z",
+      "post_id": 6,
+      "likes": 12
+    },
+    {
+      "title": "기동전사 건담 THE ORIGIN",
+      "thumbnail_url": "https://firebasestorage.googleapis.com/v0/b/mymagazinepjt.appspot.com/o/animeImg%2F1655084757858?alt=media&token=5a90c396-c4d9-46b4-a18f-1c18a7cbae90",
+      "onair_year": "2015",
+      "content": "글쎄요...?",
+      "ost_url": "https://www.youtube.com/watch?v=z0JjGxZpcWg",
+      "user_id": "user123",
+      "id": 7,
+      "created_at": "2022-06-10T10:54:11.076Z",
+      "post_id": 7,
+      "likes": 12
+    },
+    {
+      "title": "천사소녀 네티",
+      "thumbnail_url": "https://firebasestorage.googleapis.com/v0/b/mymagazinepjt.appspot.com/o/animeImg%2F1655084917054?alt=media&token=fde37234-1bbb-48e4-8a25-6afe4c2edfc6",
+      "onair_year": "1995",
+      "content": "긴머리 높게 묶고~",
+      "ost_url": "https://www.youtube.com/watch?v=BbelNDsMXz8",
+      "user_id": "user123",
+      "id": 8,
+      "created_at": "2022-06-10T10:54:11.076Z",
+      "post_id": 8,
+      "likes": 12
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "comment_id": 2,
+      "comment": "저는 별로던데요",
+      "created_at": "2020-04-10T20:02:20.686"
+    },
+    {
+      "id": 2,
+      "comment_id": 3,
+      "comment": "저도 별로",
+      "created_at": "2020-04-10T20:02:20.686"
+    }
+  ],
+  "user": [
+    {
+      "user_id": "test1",
+      "password": "1234",
+      "confirm_password": "1234",
+      "id": 1
+    },
+    {
+      "user_id": "asdf",
+      "password": "asdfasdf",
+      "confirm_password": "asdf",
+      "id": 2
+    },
+    {
+      "user_id": "dfefdsef",
+      "password": "",
+      "confirm_password": "",
+      "id": 3
+    }
+  ]
+}
