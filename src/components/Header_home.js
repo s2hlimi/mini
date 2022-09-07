@@ -7,13 +7,10 @@ import logo from "../img/logo.gif";
 // 토큰 유무 확인 후 레이아웃 변경
 const Header_home = () => {
   // 토큰 유무 확인
-  const is_login = localStorage.getItem("user_token") ? true : false;
-  // 유저의 정보 가져오기
-  const login_user = {
-    // user_id: user_info[0]?.user_id,
-  };
-  console.log(login_user.user_id);
-  return is_login === false ? (
+  const is_login = localStorage.getItem("nickname");
+  const nickname = localStorage.getItem("nickname");
+
+  return is_login === null ? (
     <HeaderWrap>
       <Info>
         <div className="navBtn">
@@ -34,7 +31,7 @@ const Header_home = () => {
       <Info>
         <div className="infoBox">
           <UserBox>
-            <p>{login_user.user_id}님 반갑습니다!</p>
+            <p>{nickname}님 환영합니다!</p>
           </UserBox>
         </div>
         <div className="navBtn">
@@ -130,7 +127,6 @@ const UserBox = styled.div`
   }
   p {
     margin: 0;
-    margin-left: 30px;
     line-height: 48px;
   }
 `;

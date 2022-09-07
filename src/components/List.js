@@ -11,8 +11,8 @@ import AutoSizer from "react-virtualized-auto-sizer";
 function List() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const posts = useSelector((state) => state.posts.list);
-
+  const posts = useSelector((state) => state.posts);
+  console.log(posts);
   // 리스트 아이템 만들기 : 윈도잉용으로 인덱싱하는 함수
   const makeItem = useCallback((data) => {
     const item = data.data[0];
@@ -22,7 +22,7 @@ function List() {
     const style = data.style;
 
     const itemIndex = columnIndex + rowIndex * rowLength;
-
+    console.log(item);
     return itemIndex < item.length ? (
       <GridBox style={style}>
         <Cards>
@@ -33,7 +33,7 @@ function List() {
           <CardLabel>
             <div>
               <h3>{item[itemIndex].title}</h3>
-              <p>{item[itemIndex].onair_year} ~</p>
+              <p>{item[itemIndex].onair_year}</p>
             </div>
           </CardLabel>
         </Cards>
@@ -87,34 +87,6 @@ const Wrap = styled.div`
   flex-direction: column;
   padding: 0px;
   background: linear-gradient(to bottom, rgb(255, 217, 0), rgb(255, 255, 255));
-`;
-const ListingOption = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  font-size: 30px;
-  /* background-color: #49b0ab; */
-  width: 100%;
-  box-sizing: border-box;
-  padding: 10px 20px 0px 00px;
-  button {
-    cursor: pointer;
-    max-width: 170px;
-    margin: 0px 10px;
-    padding: 14px 20px 12px 20px;
-    outline: none;
-    border: 3px solid #000;
-    border-radius: 50px;
-    box-shadow: 2px 5px 0px #000;
-    font-size: 16px;
-    text-align: center;
-    font-family: "양진체";
-  }
-`;
-
-const OrderByYear = styled.button`
-  background-color: ${(props) =>
-    props.list_order === "like" ? "#ffeeef" : "#fae209"};
 `;
 
 const ContentsArea = styled.div`

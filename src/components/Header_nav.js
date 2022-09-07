@@ -1,20 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-
-// 프로필 이미지 improt
+// import { useSelector } from "react-redux";
 import logo from "../img/logo.gif";
 
 const Header_nav = () => {
   // 토큰 유무 확인
-  const is_login = localStorage.getItem("user_token") ? true : false;
+  const is_login = localStorage.getItem("nickname");
+  const nickname = localStorage.getItem("nickname");
 
-  // 유저의 정보 가져오기
+  //유저의 정보 가져오기
   // const user_info = useSelector((state) => state.user.user_info);
-  const login_user = {
-    // user_id: user_info[0]?.user_id,
-  };
+  // const login_user = {};
 
   // 메인페이지인 경우 null
   if (window.location.pathname === "/") return null;
@@ -65,7 +62,7 @@ const Header_nav = () => {
           </RightBtn>
         ) : (
           <UserBox>
-            <p>{login_user.email}</p>
+            <p>😋{nickname}님😋</p>
           </UserBox>
         )}
       </HeaderWrap>
@@ -103,7 +100,7 @@ const UserBox = styled.div`
   height: 45px;
   border: 3px solid #000;
   border-radius: 10px;
-  background: #ffeeef;
+  background: #ffffff;
   position: absolute;
   right: 0;
   margin-right: 30px;
@@ -121,13 +118,7 @@ const UserBox = styled.div`
   }
   p {
     margin: 0;
-    margin-left: 30px;
     line-height: 48px;
-  }
-  img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
   }
 `;
 const Title = styled.h1`
@@ -149,6 +140,7 @@ const HomeBtn = styled(Link)`
   margin-left: 30px;
   border: 3px solid #000;
   border-radius: 10px;
+  background: #ffffff;
 `;
 
 const RightBtn = styled(Link)`
@@ -156,5 +148,6 @@ const RightBtn = styled(Link)`
   margin-right: 30px;
   border: 3px solid #000;
   border-radius: 10px;
+  background: #ffffff;
 `;
 export default Header_nav;

@@ -20,7 +20,7 @@ export const add_user_AX = (post_info) => {
   console.log(post_info);
   return function (dispatch) {
     axios
-      .post("http://3.36.70.96:8080/api/signup", post_info)
+      .post("http://localhost:5000/user", post_info)
       .then((response) => {
         dispatch(add_user(post_info));
         window.alert("회원가입 완료!");
@@ -38,12 +38,12 @@ export const add_user_AX = (post_info) => {
 export const LoginDB = (login_info) => {
   return function (dispatch) {
     axios
-      .post("http://3.36.70.96:8080/api/login", login_info)
+      .post("http://localhost:5000/user", login_info)
       .then((response) => {
-        // localStorage.setItem("user_token", response.data.token);
+        localStorage.setItem("user_token", response.data.token);
         console.log(response);
         window.alert("로그인 완료!");
-        // window.location.replace("/");
+        window.location.replace("/");
       })
       .catch((error) => alert(error.response.data.alert));
   };
@@ -53,11 +53,11 @@ export const LoginDB = (login_info) => {
 export const loginCheckDB = () => {
   return function (dispatch) {
     instance
-      .get("/api/member")
+      .get("http://localhost:5000/user")
       .then((response) => {
         dispatch(
           set_user({
-            nickname: response.data.user.nickname,
+            nickname: response.data.nickname.nickname,
           })
         );
       })

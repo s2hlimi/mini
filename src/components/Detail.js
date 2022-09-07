@@ -10,27 +10,28 @@ import {
   createCommentAX,
   loadCommentAX,
   deleteCommentAX,
-  updateCommnetAX,
+  // updateCommnetAX,
 } from "../redux/modules/comments";
 import { delete_post_AX } from "../redux/modules/posts";
 //스크롤 관련
 import ScrollRestore from "./ScrollRestore";
+import Header_nav from "../components/Header_nav";
 
 const Detail = (props) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const is_login = props.is_login;
-  const Member = props.Member[0];
+  // const is_login = props.is_login;
+  const nickname = localStorage.getItem("nickname");
 
   //페이지 인덱스값 받아오기
-  const params = useParams();
-  const id = params.id;
+  const { id } = useParams();
+  // const id = params.id;
 
   //데이터 가져오기
   const [posts, setPosts] = useState([]);
   // console.log(posts);
   React.useEffect(() => {
-    axios.get(`http://3.36.70.96:8080/api/place/${id}`).then((response) => {
+    axios.get(`http://3.36.70.96:8080/api/place/`).then((response) => {
       setPosts(response.data);
     });
   }, []);
@@ -66,17 +67,17 @@ const Detail = (props) => {
   const addComment = () => {
     const new_commnet = {
       comment: comment_ref.current.value,
-      nickname: Member.nickname,
+      nickname: nickname,
     };
     dispatch(createCommentAX(id, new_commnet));
   };
 
   return (
     <Wrap>
+      <Header_nav />
       <Container>
         <ScrollRestore />
         <Div>
-          <Img src={posts?.imageUrl}></Img>
           <Box>
             <label>작성자</label>
             <div>
