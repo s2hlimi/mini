@@ -1,9 +1,9 @@
 # 맛집탐방😋 (4조)
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/108657283/187939285-2834bfdd-b497-4984-a390-a291d6d3cb35.gif"/>
+<img src="https://user-images.githubusercontent.com/108657283/189177347-9f0576b7-78ad-49da-ab4f-54bbb0c16f27.gif"/>
 </p>
-          
+
 ## 🟡기간
 **<p align="center">2022.09.02 2022.09.08</p>**
 
@@ -18,8 +18,8 @@
     - API 명세서 작성하기
     - UI 구현하기
  - **(2)조건부 렌더링
-    - 로그인 시에만 글쓰기 작성 및 댓글 작성가능
-    - 신의 글 및 댓글만 수정 삭제 가능
+    - 로그인 시에만 글쓰기 작성 및 댓글 작성가능 버튼 보이게 표시
+    - 자신의 글 및 댓글만 수정 삭제 가능
  - **(3)회원가입, 로그인 CRUD 구현**
     - 회원가입(유효성검사)
     - 중복확인
@@ -44,4 +44,4 @@
 
 ## 🟡 백엔드 깃허브
  - Spring 
-
+[https://github.com/prscsl/mini_project_T](https://github.com/prscsl/mini_project_T)
