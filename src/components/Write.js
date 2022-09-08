@@ -27,13 +27,17 @@ function Write(props) {
   // 게시물 수정인지, 새로 쓰는것인지 판별
   const isNew = params.post_id === "new" ? true : false;
 
-  // 수정이라면 : 현재 포스트의 데이터를 불러와 state로 저장합니다
+  // 수정이라면 : 현재 포스트의 데이터를 불러와 state로 저장
   const [thisPost, setThisPost] = React.useState(null);
 
   React.useEffect(() => {
     if (!isNew) {
       axios
-        .get("http://3.36.70.96:8080/api/auth/place/" + params.post_id)
+        .get("http://3.36.70.96:8080/api/auth/place/" + params.post_id, {
+          nickname: localStorage.getItem("nickname"),
+          Authorization: localStorage.getItem("Authorization"),
+          RefreshToken: localStorage.getItem("RefreshToken"),
+        })
         .then((response) => {
           setThisPost(response.data);
           if (is_login && nickname.nickname !== response.data.user_id) {
@@ -58,9 +62,7 @@ function Write(props) {
       const new_post = {
         title: title_ref.current.value,
         placeTitle: placeTitle_ref.current.value,
-        author: nickname.nickname,
         content: content_ref.current.value,
-        // createdAt: createdAt_ref.current.value,
         imageUrl: imageUrl_ref.current.value,
       };
       dispatch(create_post_AX(new_post));

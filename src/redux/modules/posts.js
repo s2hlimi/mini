@@ -30,7 +30,6 @@ export const load_posts_AX = () => {
     axios
       .get("http://3.36.70.96:8080/api/place", {
         headers: {
-          nickname: localStorage.getItem("nickname"),
           Authorization: localStorage.getItem("Authorization"),
           RefreshToken: localStorage.getItem("RefreshToken"),
         },
@@ -41,8 +40,13 @@ export const load_posts_AX = () => {
 
 export const create_post_AX = (post_data) => {
   return function (dispatch) {
-    instance
-      .post("http://3.36.70.96:8080/api/auth/place", post_data)
+    axios
+      .post("http://3.36.70.96:8080/api/auth/place", post_data, {
+        headers: {
+          Authorization: localStorage.getItem("Authorization"),
+          RefreshToken: localStorage.getItem("RefreshToken"),
+        },
+      })
       .then((response) => {
         post_data = { ...post_data, post_id: response.data.post_id };
         dispatch(create_post(post_data));

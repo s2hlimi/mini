@@ -12,15 +12,13 @@ import {
   deleteCommentAX,
   // updateCommnetAX,
 } from "../redux/modules/comments";
-import { delete_post_AX } from "../redux/modules/posts";
+import { delete_post_AX, load_posts_AX } from "../redux/modules/posts";
 //스크롤 관련
-import ScrollRestore from "./ScrollRestore";
 import Header_nav from "../components/Header_nav";
 
-const Detail = (props) => {
+const Detail = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  // const is_login = props.is_login;
   const nickname = localStorage.getItem("nickname");
 
   //페이지 인덱스값 받아오기
@@ -31,7 +29,7 @@ const Detail = (props) => {
   const [posts, setPosts] = useState([]);
   // console.log(posts);
   React.useEffect(() => {
-    axios.get(`http://3.36.70.96:8080/api/place/`).then((response) => {
+    axios.get(`http://3.36.70.96:8080/api/place/${id}`).then((response) => {
       setPosts(response.data);
     });
   }, []);
@@ -39,6 +37,7 @@ const Detail = (props) => {
   //게시글 삭제하기
   const delete_post = () => {
     dispatch(delete_post_AX(id));
+    dispatch(load_posts_AX());
     navigate("/");
   };
   //댓글 수정하기
@@ -76,7 +75,6 @@ const Detail = (props) => {
     <Wrap>
       <Header_nav />
       <Container>
-        <ScrollRestore />
         <Div>
           <Box>
             <label>작성자</label>
@@ -94,9 +92,9 @@ const Detail = (props) => {
               <h2>{posts?.title}</h2>
             </div>
 
-            <label>작성일</label>
+            <label>내용</label>
             <div>
-              <h2>{posts?.createdAt}</h2>
+              <h2>{posts?.content}</h2>
             </div>
           </Box>
         </Div>
