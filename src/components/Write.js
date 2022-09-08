@@ -235,7 +235,7 @@ const InputAreas = styled.div`
 const Button = styled.button`
   padding: 16px;
   width: 60%;
-  margin: 80px 0px 20px 0px;
+  margin: 40px 0px 20px 0px;
   outline: none;
   border: 3px solid black;
   border-radius: 50px;

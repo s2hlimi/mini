@@ -1,4 +1,5 @@
 import instance from "../../shared/Request";
+import axios from "axios";
 
 // 액션
 const LOAD = "posts/LOAD";
@@ -22,6 +23,21 @@ export function update_post(post_data) {
 export function delete_post(post_id) {
   return { type: DELETE, post_id };
 }
+
+//미들웨어
+export const load_posts_AX = () => {
+  return function (dispatch) {
+    axios
+      .get("http://3.36.70.96:8080/api/place", {
+        headers: {
+          nickname: localStorage.getItem("nickname"),
+          Authorization: localStorage.getItem("Authorization"),
+          RefreshToken: localStorage.getItem("RefreshToken"),
+        },
+      })
+      .then((response) => dispatch(load_posts(response.data.post)));
+  };
+};
 
 export const create_post_AX = (post_data) => {
   return function (dispatch) {
@@ -65,15 +81,7 @@ export const delete_post_AX = (post_id) => {
 
 // 초기값
 const initialState = {
-  list: [
-    {
-      title: "",
-      placeTitle: "",
-      content: "",
-      author: "",
-      imageUrl: "",
-    },
-  ],
+  list: [{ title: "", placeTitle: "", content: "", author: "", imageUrl: "" }],
 };
 
 export default function reducer(state = initialState, action = {}) {

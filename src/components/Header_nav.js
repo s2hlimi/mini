@@ -1,17 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-// import { useSelector } from "react-redux";
 import logo from "../img/logo.gif";
 
 const Header_nav = () => {
   // 토큰 유무 확인
   const is_login = localStorage.getItem("nickname");
   const nickname = localStorage.getItem("nickname");
-
-  //유저의 정보 가져오기
-  // const user_info = useSelector((state) => state.user.user_info);
-  // const login_user = {};
 
   // 메인페이지인 경우 null
   if (window.location.pathname === "/") return null;

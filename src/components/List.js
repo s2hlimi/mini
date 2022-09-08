@@ -1,8 +1,10 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 // 리덕스 관련 Imports
 import { useDispatch, useSelector } from "react-redux";
+import { load_posts_AX } from "../redux/modules/posts";
+
 import styled from "styled-components";
 import Header_home from "./Header_home";
 import { FixedSizeGrid as Grid } from "react-window";
@@ -12,7 +14,12 @@ function List() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const posts = useSelector((state) => state.posts);
-  console.log(posts);
+
+  // 리덕스에서 포스트 리스트를 로딩
+  React.useEffect(() => {
+    dispatch(load_posts_AX());
+  }, []);
+
   // 리스트 아이템 만들기 : 윈도잉용으로 인덱싱하는 함수
   const makeItem = useCallback((data) => {
     const item = data.data[0];
@@ -23,17 +30,18 @@ function List() {
 
     const itemIndex = columnIndex + rowIndex * rowLength;
     console.log(item);
+
     return itemIndex < item.length ? (
       <GridBox style={style}>
         <Cards>
           <CardThumb
             onClick={() => navigate("/detail/" + item[itemIndex].post_id)}
-            thumbImg={item[itemIndex].thumbnail_url}
+            thumbImg={item[itemIndex].imageUrl}
           />
           <CardLabel>
             <div>
-              <h3>{item[itemIndex].title}</h3>
-              <p>{item[itemIndex].onair_year}</p>
+              <h3>{item[itemIndex].placeTitle}</h3>
+              <p>{item[itemIndex].title}</p>
             </div>
           </CardLabel>
         </Cards>
@@ -41,23 +49,10 @@ function List() {
     ) : null;
   });
 
-  // 스크롤 꼭대기로 가기 버튼
-  const listRef = React.useRef();
-
-  const scrollToTop = () => {
-    listRef.current.scrollToItem({
-      columnIndex: 0,
-      rowIndex: 0,
-    });
-
-    console.log(listRef);
-  };
-
   // 컴포넌트 리턴
   return (
     <>
       <Header_home />
-
       <Wrap>
         <ContentsArea>
           <AutoSizer>
@@ -70,7 +65,6 @@ function List() {
                 rowHeight={530}
                 width={width + 80}
                 itemData={[posts, Math.floor(width / 340)]}
-                ref={listRef}
               >
                 {makeItem}
               </Grid>

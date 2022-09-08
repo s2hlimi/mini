@@ -122,9 +122,13 @@ const StLoginInput = styled.input`
   padding: 4px;
   margin: 20px;
   width: 180px;
-  background: white;
-  border: 3px solid #ffe000;
-  border-radius: 3px;
+  border: px;
+  border-radius: 8px;
+  height: 30px;
+  background-color: whitesmoke;
+  &:focus {
+    border: 2px solid black;
+    background-color: #fff05a;
 `;
 
 const StLoginBtn = styled.button`
