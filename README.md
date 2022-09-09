@@ -4,16 +4,20 @@
 <img src="https://user-images.githubusercontent.com/108657283/189177347-9f0576b7-78ad-49da-ab4f-54bbb0c16f27.gif"/>
 </p>
 
-## 🟡기간 & 팀원 소개
+## 🟡제작기간 & 팀원 소개
 - 2022.09.02 ~ 2022.09.08
 - FE: 심혜림
 - BE: [https://github.com/prscsl/mini_project_T](https://github.com/prscsl/mini_project_T)
+
+---
 
 ## 🟡와이어프레임
 <p align="center">
 
 <img src="https://user-images.githubusercontent.com/108657283/189171671-4d1bd151-bc8f-4200-8ebf-1ca232c803d7.jpg"/>
 </p>
+
+---
 
 ## 🟡구현기능
  - **(1) 공통**
