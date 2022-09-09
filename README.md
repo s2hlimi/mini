@@ -4,6 +4,8 @@
 <img src="https://user-images.githubusercontent.com/108657283/189177347-9f0576b7-78ad-49da-ab4f-54bbb0c16f27.gif"/>
 </p>
 
+---
+
 ## 🟡제작기간 & 팀원 소개
 - 2022.09.02 ~ 2022.09.08
 - FE: 심혜림
