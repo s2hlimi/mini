@@ -4,8 +4,10 @@
 <img src="https://user-images.githubusercontent.com/108657283/189177347-9f0576b7-78ad-49da-ab4f-54bbb0c16f27.gif"/>
 </p>
 
-## 🟡기간
-**<p align="center">2022.09.02 ~ 2022.09.08</p>**
+## 🟡기간 & 팀원 소개
+- 2022.09.02 ~ 2022.09.08
+- FE: 심혜림
+- BE: [https://github.com/prscsl/mini_project_T](https://github.com/prscsl/mini_project_T)
 
 ## 🟡와이어프레임
 <p align="center">
@@ -38,10 +40,3 @@
     - 댓글 삭제 하기
     - 댓글 수정 하기
 - **(6) 배포**
-
-## 🟡 프론트엔드 팀원
- - 심혜림(React)
-
-## 🟡 백엔드 깃허브
- - Spring 
-[https://github.com/prscsl/mini_project_T](https://github.com/prscsl/mini_project_T)
